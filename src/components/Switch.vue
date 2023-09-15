@@ -12,7 +12,6 @@
 <script>
 export default {
   name: "Switch",
-  props: ["id", "checked"],
 };
 </script>
 
