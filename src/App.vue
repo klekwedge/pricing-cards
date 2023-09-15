@@ -2,19 +2,28 @@
   <section>
     <h1 class="header">Our Pricing</h1>
     <Switch />
-    <div class="container"><PriceItem/></div>
+
+    <div class="container">
+      <PriceItem v-for="item in items" :priceItem="item" :key="item.title" />
+    </div>
     <!-- <img src="../assets/bg-top.svg" alt="" class="top" /> -->
   </section>
 </template>
 
 <script lang="ts">
+import { ref } from "vue";
 import Switch from "./components/Switch.vue";
 import PriceItem from "./components/PriceItem.vue";
+import data from "./data/data";
 
 export default {
   components: { Switch, PriceItem },
   setup() {
-    return {};
+    const items = ref(data);
+
+    return {
+      items,
+    };
   },
 };
 </script>
@@ -62,12 +71,11 @@ section {
   height: 100vh;
   object-position: top right;
 }
-img .top{
+img .top {
   display: none;
   position: relative;
   z-index: -1;
 }
-
 
 @media only screen and (max-width: 600px) {
   section {

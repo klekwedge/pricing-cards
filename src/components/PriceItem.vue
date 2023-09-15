@@ -1,14 +1,14 @@
 <template>
   <div class="item">
-    <p class="tier">Basic</p>
+    <p class="tier">{{ $props.priceItem.title }}</p>
     <div class="pricing">
-      <p class="monthly" v-show="monkey === true">19.99</p>
-      <p class="annually" v-show="monkey !== true">199.99</p>
+      <p class="monthly" v-show="monkey === true">{{ $props.priceItem.price.monthly }}</p>
+      <p class="annually" v-show="monkey !== true">{{ $props.priceItem.price.annually }}</p>
     </div>
     <div>
-      <p class="storage">500 GB</p>
-      <p class="users">2</p>
-      <p class="upload">3GB</p>
+      <p class="storage">{{ $props.priceItem.storage }}</p>
+      <p class="users">{{ $props.priceItem.users }}</p>
+      <p class="upload">{{ $props.priceItem.size }}</p>
     </div>
     <button>LEARN MORE</button>
   </div>
@@ -17,6 +17,7 @@
   <script>
 export default {
   name: "PriceItem",
+  props: ['priceItem']
 };
 </script>
   
