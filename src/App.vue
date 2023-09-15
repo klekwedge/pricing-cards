@@ -2,7 +2,6 @@
   <section>
     <h1 class="header">Our Pricing</h1>
     <Switch />
-
     <div class="container">
       <PriceItem v-for="item in items" :priceItem="item" :key="item.title" />
     </div>

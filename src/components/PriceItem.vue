@@ -1,5 +1,5 @@
 <template>
-  <div class="item">
+  <div :class="`item ${$props.priceItem.highlighted && 'special'}`">
     <p class="tier">{{ $props.priceItem.title }}</p>
     <div class="pricing">
       <p class="monthly" v-show="monkey === true">{{ $props.priceItem.price.monthly }}</p>
