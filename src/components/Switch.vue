@@ -1,17 +1,31 @@
 <template>
   <div class="range">
-    <p class="inactive" :class="{ active: monkey }">Monthly</p>
+    <p class="inactive" :class="{ active: montly }">Monthly</p>
     <label class="switch">
-      <input type="checkbox" />
+      <input type="checkbox" :model="checked" @change="(e) => changeValue(e)" />
       <span class="slider round" @click="monkey = !monkey"></span>
     </label>
-    <p class="inactive" :class="{ active: !monkey }">Annually</p>
+    <p class="inactive" :class="{ active: !montly }">Annually</p>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "Switch",
+  setup(props, ctx) {
+    const checked = ref(false);
+
+    const changeValue = (e) => {
+      checked.value = !checked.value;
+      ctx.emit("changePlan", !checked.value);
+    };
+
+    return {
+      checked,
+      changeValue,
+    };
+  },
 };
 </script>
 
@@ -97,5 +111,4 @@ input:checked + .slider:before {
   color: var(--greyblue);
   transition: all 0.2s ease-in-out;
 }
-
 </style>

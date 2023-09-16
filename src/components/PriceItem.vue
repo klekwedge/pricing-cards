@@ -1,23 +1,23 @@
 <template>
-  <div :class="`item ${$props.priceItem.highlighted && 'special'}`">
-    <p class="tier">{{ $props.priceItem.title }}</p>
+  <div :class="`item ${priceItem.highlighted && 'special'}`">
+    <p class="tier">{{ priceItem.title }}</p>
     <div class="pricing">
-      <p class="monthly" v-show="monkey === true">{{ $props.priceItem.price.monthly }}</p>
-      <p class="annually" v-show="monkey !== true">{{ $props.priceItem.price.annually }}</p>
+      <p class="monthly" v-if="montly">{{ priceItem.price.monthly }}</p>
+      <p class="annually" v-else>{{ priceItem.price.annually }}</p>
     </div>
     <div>
-      <p class="storage">{{ $props.priceItem.storage }}</p>
-      <p class="users">{{ $props.priceItem.users }}</p>
-      <p class="upload">{{ $props.priceItem.size }}</p>
+      <p class="storage">{{ priceItem.storage }}</p>
+      <p class="users">{{ priceItem.users }}</p>
+      <p class="upload">{{ priceItem.size }}</p>
     </div>
     <button>LEARN MORE</button>
   </div>
 </template>
-  
-  <script>
+
+<script>
 export default {
   name: "PriceItem",
-  props: ['priceItem']
+  props: ['priceItem', 'montly']
 };
 </script>
   
