@@ -17,11 +17,11 @@
 <script>
 export default {
   name: "PriceItem",
-  props: ['priceItem', 'montly']
+  props: ["priceItem", "montly"],
 };
 </script>
-  
-  <style lang="scss" scoped>
+
+<style lang="scss" scoped>
 .item {
   width: 22rem;
   height: 27rem;
@@ -30,16 +30,6 @@ export default {
   position: relative;
   z-index: 3;
 }
-.item:nth-child(1) {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-.item:nth-child(3) {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
 .special {
   height: 30rem;
   background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
@@ -54,12 +44,14 @@ export default {
   padding-bottom: 0.7rem;
   font-family: "Montserrat";
   font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
   color: white;
   border: none;
   font-size: 0.8rem;
   border-radius: 6px;
   background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-  transition: 0.1s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 
 .special button {
@@ -170,7 +162,7 @@ p {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 1110px) {
   .item {
     border-radius: 12px;
   }
