@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 class="header">Our Pricing</h1>
-    <Switch @changePlan="changePlan" />
+    <Switch @changePlan="changePlan" :montly="montly" />
     <div class="container">
       <PriceItem
         v-for="item in items"
@@ -88,7 +88,7 @@ img .top {
   z-index: -1;
 }
 
-@media(max-width: 1110px) {
+@media (max-width: 1110px) {
   section {
     padding-bottom: 2rem;
     padding-top: 4rem;

@@ -3,7 +3,7 @@
     <p class="inactive" :class="{ active: montly }">Monthly</p>
     <label class="switch">
       <input type="checkbox" :model="checked" @change="(e) => changeValue(e)" />
-      <span class="slider round" @click="monkey = !monkey"></span>
+      <span class="slider round"></span>
     </label>
     <p class="inactive" :class="{ active: !montly }">Annually</p>
   </div>
@@ -13,6 +13,7 @@
 import { ref } from "vue";
 export default {
   name: "Switch",
+  props: ['montly'],
   setup(props, ctx) {
     const checked = ref(false);
 
