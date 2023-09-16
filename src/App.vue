@@ -10,7 +10,7 @@
         :montly="montly"
       />
     </div>
-    <!-- <img src="../assets/bg-top.svg" alt="" class="top" /> -->
+    <img src="./assets/bg-top.svg" alt="" class="top" />
   </section>
 </template>
 
@@ -48,7 +48,7 @@ section {
   width: 100%;
   min-height: 100vh;
   height: fit-content;
-  /* background: url(../assets/bg-bottom.svg), var(--verylightgreyblue); */
+  background: url(../assets/bg-bottom.svg), var(--verylightgreyblue);
   background-repeat: no-repeat;
   background-position: bottom left;
   background-clip: content-box;
